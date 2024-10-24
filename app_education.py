@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd 
 import matplotlib.pyplot as plt
 
-#df = pd.read_csv('education.csv')
+df = pd.read_csv('education.csv')
 
 st.title("Análisis de datos de educación en Colombia")
 
@@ -29,16 +29,16 @@ if institucion:
 
 st.dataframe(df_filtrado)
 
-#Calcular y mostrar estadísticas descriptivas de los datos filtrados
+
 
 st.subheader("Estadísticas Descriptivas")
 st.write(df_filtrado.describe())
 
-# Conteo de estudiantes por nivel educativo
+
 st.subheader("Conteo de estudiantes por nivel esducativo")
 st.bar_chart(df_filtrado["Nivel educativo"].value_counts())
 
-# Visualizar la distribución de la edad con un histograma
+
 st.subheader("Distribución de la Edad")
 
 fig, ax = plt.subplots()
